@@ -13,12 +13,15 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Layers, Palette, Coffee, BookOpen } from "lucide-react";
+import { ModeToggle } from '@/components/ui/theme-toggle';
 
 export function Header() {
   return (
-    <div className="sticky top-0 z-50 w-full py-5 border-b bg-secondary/40 backdrop-blur supports-[backdrop-filter]:bg-secondary/20 px-12 [&_*]:no-underline flex flex-row items-center justify-stretch gap-9">
+    <div className="sticky top-0 z-50 w-full py-5 border-b bg-secondary/40 backdrop-blur supports-[backdrop-filter]:bg-secondary/20 px-12 [&_*]:no-underline flex flex-row items-center justify-between">
+      {/* Left side — logo */}
       <h1 className="font-bold">hitury.dev</h1>
 
+      {/* Center — navigation */}
       <NavigationMenu>
         <NavigationMenuList className="gap-3">
           {/* Personal Dropdown */}
@@ -41,6 +44,7 @@ export function Header() {
                     </span>
                   </a>
                 </NavigationMenuLink>
+
                 <NavigationMenuLink asChild>
                   <a
                     href="#"
@@ -53,6 +57,7 @@ export function Header() {
                     </span>
                   </a>
                 </NavigationMenuLink>
+
                 <NavigationMenuLink asChild>
                   <a
                     href="#"
@@ -94,8 +99,14 @@ export function Header() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+
+      {/* Right side — mode toggle */}
+      <div className="flex justify-end">
+        <ModeToggle />
+      </div>
     </div>
   );
 }
 
 export default Header;
+
