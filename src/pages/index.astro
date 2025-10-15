@@ -1,6 +1,7 @@
 ---
 import "@/styles/global.css";
 import Header from "@/components/header";
+import Hero from "@/components/hero";
 ---
 
 <html lang="en">
@@ -11,7 +12,8 @@ import Header from "@/components/header";
     <meta name="generator" content={Astro.generator} />
     <title>Hitury - Portfolio</title>
   </head>
-  <body class="font-[var(--font-sans)]">
+  <body class="">
 	<Header client:load/>
+  <Hero />
   </body>
 </html>
